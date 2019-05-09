@@ -6,29 +6,49 @@
   object name, diet, weight, length, period
 */
 
+class Dinosaur{
+  constructor(name,diet,weight,length,period){
+    this.name = name;
+    this.diet = diet;
+    this.weight = weight;
+    this.length = length;
+    this.period = period
+  }
+
+  roar(){
+    return "RAWERSRARARWERSARARARRRR!"
+  }
+}
+
 // tyrannosaurus, carnivorous, 7000kg, 12m, Late Cretaceous
+
+const tyrannosaurus = new Dinosaur('tyrannosaurus','carnivorous','7000kg','12m','Late Cretaceous')
 
 // stegosaurus, herbivorous, 2000kg, 9m, Late Jurassic
 
+const stegosaurus = new Dinosaur('stegosaurus','herbivorous','2000kg','9m','Late Jurassic')
+
 // velociraptor, carnivorous, 15kg, 1.8m, Late Cretaceous
+
+const velociraptor = new Dinosaur('velociraptor','carnivorous','15kg','1.8m','Late Cretaceous')
 
 // Using your dinosaur objects, log answers to these questions:
 
 // How much did tyrannosaurus weigh?
-console.log();
+console.log(tyrannosaurus.weight);
 
 // What was the diet of a velociraptor?
-console.log();
+console.log(velociraptor.diet);
 
 // How long was a stegosaurus?
-console.log();
+console.log(stegosaurus.length);
 
 // What time period did tyrannosaurus live in?
-console.log();
+console.log(tyrannosaurus.period);
 
 
 // Create a new roar method for the tyrannosaurus.  When called, return "RAWERSRARARWERSARARARRRR!" Log the result.
-console.log();
+console.log(tyrannosaurus.roar());
 
 
 // ==== Arrays ====
@@ -50,7 +70,11 @@ const graduates = [{"id":1,"first_name":"Cynde","university":"Missouri Southern 
 
 Once you have the new array created, sort the universities alphabetically and log the result. */
 const universities = [];
-console.log(universities)
+for(let i = 0; i < graduates.length; i++){
+  univ = graduates[i].university;
+  universities.push(univ)
+}
+console.log(universities.sort())
 
 /* Request 2: Create a new array called contactInfo that contains both first name and email of each student. 
 
@@ -59,11 +83,21 @@ Name email@example.com
 
 Log the result of your new array. */
 const contactInfo = [];
+for(let i = 0; i < graduates.length; i++){
+  email = graduates[i].email;
+  firstName = graduates[i].first_name;
+  contactInfo.push(`${firstName} ${email}`)
+}
 console.log(contactInfo);
 
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called uni that contains them all. Log the result. */
 const uni = [];
+for(let i = 0; i < graduates.length; i++){
+  if(graduates[i].university.indexOf('Uni') != -1){
+    uni.push(graduates[i])
+  }
+}
 console.log(uni);
 
 
@@ -89,6 +123,9 @@ The zoo wants to display both the scientific name and the animal name in front o
 
 */
 const animalNames = [];
+zooAnimals.forEach(element => {
+  animalNames.push(zooAnimals.animal_name)
+});
 console.log(animalNames);
 
 /* Request 2: .map()    
