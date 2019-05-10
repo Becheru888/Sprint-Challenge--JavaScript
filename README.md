@@ -30,13 +30,43 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. Describe the biggest difference between `.forEach` & `.map`.
 
+* .forEach() ----> executes a provided function once for each array element.
+Well, the forEach() method doesn’t actually return anything (undefined). It simply calls a provided function on each element in your array. This callback is allowed to mutate the calling array.
+
+
+* .map() ----> creates a new array with the results of calling a provided function on every element in the calling array.
+Meanwhile, the map() method will also call a provided function on every element in the array. The difference is that map() utilizes return values and actually returns a new Array of the same size.
+
+
 2. What is the difference between a function and a method?
+
+* A function is a piece of code that is called by name. It can be passed data to operate on (i.e. the parameters) and can optionally return data (the return value). All data that is passed to a function is explicitly passed.
+
+* A method is a piece of code that is called by a name that is associated with an object. In most respects it is identical to a function except for two key differences:
+
+* A method is implicitly passed the object on which it was called.
+* A method is able to operate on data that is contained within the class (remembering that an object is an instance of a class - the class is the definition, the object is an instance of that data).
 
 3. What is closure?
 
+* A closure is a feature in JavaScript where an inner function has access to the outer (enclosing) function’s variables — a scope chain.
+
+* The closure has three scope chains:
+* it has access to its own scope — variables defined between its curly brackets
+* it has access to the outer function’s variables
+* it has access to the global variables
+
 4. Describe the four rules of the 'this' keyword.
+* Whenever a function is contained in the global scope, the value of this inside of that function will be the window object.
+* Whenever a function is called by a preceding dot, the object before that dot is this.
+* Whenever a constructor function is used, this refers to the specific instance of the object that is created and returned by the constructor function.
+* Whenever JavaScript’s call or apply method is used, this is explicitly defined.
+
+
 
 5. Why do we need super() in an extended class?
+* Derived classes have to call super() if they have a constructor. In react, all components extend from the Component class.
+  Super() is used to tell a parent’s constructor to be concerned with the child’s attributes
 
 ## Project Set up
 
